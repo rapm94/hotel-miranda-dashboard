@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Guests() {
+export default function RoomDetails() {
     return (
         <div>
-            <h1>Guests</h1>
+            
         </div>
     )
 }
