@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 import { theme } from './styles/themes'
 import { Link } from 'react-router-dom'
@@ -17,6 +16,7 @@ const SideAppBar = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-right: 1px solid #e6e6e6;
 `
 
 export const SideBarLinks = styled.button`
@@ -29,9 +29,17 @@ export const SideBarLinks = styled.button`
   cursor: pointer;
 `
 
+
+
 export default function CustomSideAppBar() {
 
   const auth = useContext(AuthContext)
+
+  const handleLogOut = () => {
+  localStorage.removeItem('loggedInState');
+  auth.setLoggedIn(false);
+}
+
   return (
     <div>
       <SideAppBar>
@@ -47,11 +55,11 @@ export default function CustomSideAppBar() {
         <Link to="/contacts">
           <SideBarLinks>Contacts</SideBarLinks>
         </Link>
-        <Link to="/concierge">
-          <SideBarLinks>Concierge</SideBarLinks>
+        <Link to="/Users">
+          <SideBarLinks>Users</SideBarLinks>
         </Link>
         <Link to="/login">
-          <SideBarLinks onClick={() => auth.setLoggedIn(false)}>Logout</SideBarLinks>
+          <SideBarLinks onClick={handleLogOut}>Logout</SideBarLinks>
         </Link>
       </SideAppBar>
     </div>

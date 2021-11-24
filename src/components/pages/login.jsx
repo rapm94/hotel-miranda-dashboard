@@ -14,6 +14,14 @@ export default function Login() {
   const userName = 'raul'
   const userPassword = '123'
 
+  const saveState = (state) => {
+    try{
+      localStorage.setItem('loggedInState', state)  
+    } catch(e) {
+      console.log(e)
+    }
+  }
+
   useEffect(() => {
     if (loggedIn) {
       navigate('/', { replace: true });
@@ -30,13 +38,13 @@ export default function Login() {
     e.preventDefault()
     const passwordId = e.target.value
     setPassword(passwordId)
-    console.log(passwordId === userPassword)
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
     if(userId === userName && password === userPassword){
       setLoggedIn(true)
+      saveState(true)
     } else {
       alert('Usuario o contraseña incorrectos')
     }
