@@ -43,7 +43,7 @@ export default function CustomSideAppBar() {
   return (
     <div>
       <SideAppBar>
-        <Link to="/dasboard">
+        <Link to="/">
           <SideBarLinks>Dashboard</SideBarLinks>
         </Link>
         <Link to="/rooms">

@@ -21,7 +21,7 @@ height: 125px;
 export default function Dashboard() {
     return (
         <StyledGrid>
-            <StyledKpi>
+{/*             <StyledKpi>
                 KPI1
             </StyledKpi>
             <StyledKpi>
@@ -32,7 +32,7 @@ export default function Dashboard() {
             </StyledKpi>
             <StyledKpi>
                 KPI4
-            </StyledKpi>
+            </StyledKpi> */}
         </StyledGrid>
     )
 }

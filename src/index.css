@@ -1,108 +1,118 @@
-@font-face{
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body{
+    font-family: "Poppins", sans-serif;
+}
+
+/* @font-face{
     font-family: 'Poppins';
-    src: url('./components/fonts/poppins/Poppins-Regular.ttf');
+    src: url('/fonts/poppins/Poppins-Regular.ttf');
     font-weight: normal;
     font-style: normal;
 }
 @font-face{
     font-family: 'Poppins';
-    src: url('./components/fonts/poppins/Poppins-SemiBold.ttf');
+    src: url('../public/fonts/Poppins-SemiBold.ttf');
     font-weight: 600;
     font-style: normal;
 }
 @font-face{
     font-family: 'Poppins';
-    src: url('./components/fonts/poppins/Poppins-Bold.ttf');
+    src: url('/fonts/poppins/Poppins-Bold.ttf');
     font-weight: bold;
     font-style: normal;
 }
 @font-face{
     font-family: 'Poppins';
-    src: url('./components/fonts/poppins/Poppins-ExtraBold.ttf');
+    src: url('/fonts/poppins/Poppins-ExtraBold.ttf');
     font-weight: 800;
     font-style: normal;
 }
 @font-face{
     font-family: 'Poppins';
-    src: url('./components/fonts/poppins/Poppins-Black.ttf');
+    src: url('/fonts/poppins/Poppins-Black.ttf');
     font-weight: 900;
     font-style: normal;
 }
 @font-face{
     font-family: 'Poppins';
-    src: url('./components/fonts/poppins/Poppins-ExtraLight.ttf');
+    src: url('/fonts/poppins/Poppins-ExtraLight.ttf');
     font-weight: 100;
     font-style: normal;
 }
 @font-face{
     font-family: 'Poppins';
-    src: url('./components/fonts/poppins/Poppins-Light.ttf');
+    src: url('/fonts/poppins/Poppins-Light.ttf');
     font-weight: 300;
     font-style: normal;
 }
 @font-face{
     font-family: 'Poppins';
-    src: url('./components/fonts/poppins/Poppins-Medium.ttf');
+    src: url('/fonts/poppins/Poppins-Medium.ttf');
     font-weight: 500;
     font-style: normal;
 }
 @font-face{
     font-family: 'Poppins';
-    src: url('./components/fonts/poppins/Poppins-Thin.ttf');
+    src: url('/fonts/poppins/Poppins-Thin.ttf');
     font-weight: 200;
     font-style: normal;
 }
 @font-face{
     font-family: 'Poppins';
-    src: url('./components/fonts/poppins/Poppins-ExtraLightItalic.ttf');
+    src: url('/fonts/poppins/Poppins-ExtraLightItalic.ttf');
     font-weight: 100;
     font-style: italic;
 }
 @font-face{
     font-family: 'Poppins';
-    src: url('./components/fonts/poppins/Poppins-LightItalic.ttf');
+    src: url('/fonts/poppins/Poppins-LightItalic.ttf');
     font-weight: 300;
     font-style: italic;
 }
 @font-face{
     font-family: 'Poppins';
-    src: url('./components/fonts/poppins/Poppins-MediumItalic.ttf');
+    src: url('/fonts/poppins/Poppins-MediumItalic.ttf');
     font-weight: 500;
     font-style: italic;
 }
 @font-face{
     font-family: 'Poppins';
-    src: url('./components/fonts/poppins/Poppins-ThinItalic.ttf');
+    src: url('/fonts/poppins/Poppins-ThinItalic.ttf');
     font-weight: 200;
     font-style: italic;
 }
 @font-face{
     font-family: 'Poppins';
-    src: url('./components/fonts/poppins/Poppins-RegularItalic.ttf');
+    src: url('/fonts/poppins/Poppins-RegularItalic.ttf');
     font-weight: normal;
     font-style: italic;
 }
 @font-face{
     font-family: 'Poppins';
-    src: url('./components/fonts/poppins/Poppins-SemiBoldItalic.ttf');
+    src: url('/fonts/poppins/Poppins-SemiBoldItalic.ttf');
     font-weight: 600;
     font-style: italic;
 }
 @font-face{
     font-family: 'Poppins';
-    src: url('./components/fonts/poppins/Poppins-BoldItalic.ttf');
+    src: url('/fonts/poppins/Poppins-BoldItalic.ttf');
     font-weight: bold;
     font-style: italic;
 }
 @font-face{
     font-family: 'Poppins';
-    src: url('./components/fonts/poppins/Poppins-ExtraBoldItalic.ttf');
+    src: url('/fonts/poppins/Poppins-ExtraBoldItalic.ttf');
     font-weight: 800;
     font-style: italic;
 }
 @font-face{
     font-family: 'Poppins';
-    src: url('./components/fonts/poppins/Poppins-BlackItalic.ttf');
+    src: url('/fonts/poppins/Poppins-BlackItalic.ttf');
     font-weight: 900;
     font-style: italic;
 }
+
+body{
+    font-family: 'Poppins', sans-serif;
+} */

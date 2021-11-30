@@ -1,33 +1,34 @@
 import { Routes, Route } from 'react-router-dom'
-import Login from './components/pages/login'
-import Dashboard from './components/pages/dashboard'
-import Contacts from './components/pages/contacts'
-import ContactDetails from './components/pages/contact-details'
-import Rooms from './components/pages/rooms'
-import RoomDetails from './components/pages/room-details'
-import ConciergeDetails from './components/pages/user-details'
-import Users from './components/pages/user'
-import { PrivateRoute } from './helpers/private-route'
-import { useState } from 'react';
-import { AuthContext } from './contexts/auth-context';
-import CustomSideAppBar from './components/SideBar';
-import { NavBar } from './components/NavBar';
+import Login from '../components/pages/login'
+import Dashboard from '../components/pages/dashboard'
+import Contacts from '../components/pages/contacts'
+import ContactDetails from '../components/pages/contact-details'
+import Rooms from '../components/pages/rooms'
+import RoomDetails from '../components/pages/room-details'
+import ConciergeDetails from '../components/pages/user-details'
+import Users from '../components/pages/user'
+import { PrivateRoute } from '../helpers/privateRoute'
+import { useState } from 'react'
+import { AuthContext } from '../contexts/auth-context'
+import CustomSideAppBar from '../components/SideBar'
+import { NavBar } from '../components/NavBar'
 function App() {
-  
-const loadState = () => {
-  try {
-     return localStorage.getItem('loggedInState') ? localStorage.getItem('loggedInState') : false;
-  } catch (err) {
-      console.log(err);
+  const loadState = () => {
+    try {
+      return localStorage.getItem('loggedInState')
+        ? localStorage.getItem('loggedInState')
+        : false
+    } catch (err) {
+      console.log(err)
+    }
   }
-}
-  const [loggedIn, setLoggedIn] = useState(loadState());
+  const [loggedIn, setLoggedIn] = useState(loadState())
 
   return (
     <>
       <div>
         <AuthContext.Provider value={{ loggedIn, setLoggedIn }}>
-          {loggedIn ? <NavBar/> : null} 
+          {loggedIn ? <NavBar /> : null}
           {loggedIn ? <CustomSideAppBar /> : null}
           <Routes>
             <Route path="/login" element={<Login />} />
