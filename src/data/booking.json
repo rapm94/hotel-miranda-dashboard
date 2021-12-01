@@ -1,4 +1,4 @@
-export default [{"id":1,"guest":"Crissy Croisdall","orderDate":"9/22/2021","checkIn":"7/28/2021","checkOut":"11/3/2021","special":null,"roomType":"Plaza"},
+ [{"id":1,"guest":"Crissy Croisdall","orderDate":"9/22/2021","checkIn":"7/28/2021","checkOut":"11/3/2021","special":null,"roomType":"Plaza"},
 {"id":2,"guest":"Guinna Edlington","orderDate":"3/25/2021","checkIn":"9/10/2021","checkOut":"4/28/2021","special":null,"roomType":"Terrace"},
 {"id":3,"guest":"Evaleen Kernes","orderDate":"6/4/2021","checkIn":"9/29/2021","checkOut":"1/11/2021","special":null,"roomType":"Road"},
 {"id":4,"guest":"Georgianne Lerego","orderDate":"5/16/2021","checkIn":"12/27/2020","checkOut":"1/18/2021","special":null,"roomType":"Place"},

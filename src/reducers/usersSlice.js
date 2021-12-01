@@ -2,16 +2,16 @@ import { createSlice } from '@reduxjs/toolkit'
 import { userSelector } from './userSlice'
 import { useSelector } from 'react-redux'
 
-function usersInitialState() {
+/* function usersInitialState() {
   const user = useSelector(userSelector)
   const usersArray = []
   return usersArray.push(user)
-}
+} */
 
 const usersSlice = createSlice({
   name: 'users',
   initialState: {
-    users: usersInitialState(),
+    users:[] /* usersInitialState() */,
     loading: false,
     error: null,
   },

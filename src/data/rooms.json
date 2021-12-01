@@ -1,4 +1,4 @@
-export default [{"id":1,"roomName":"Jishu","price":"$7386.29"},
+[{"id":1,"roomName":"Jishu","price":"$7386.29"},
 {"id":2,"roomName":"Rano","price":"$7529.48"},
 {"id":3,"roomName":"Nishinoomote","price":"$1557.56"},
 {"id":4,"roomName":"La Jutosa","price":"$9965.15"},

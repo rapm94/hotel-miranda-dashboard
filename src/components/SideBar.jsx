@@ -1,8 +1,9 @@
 import styled from 'styled-components'
-import { theme } from './styles/themes'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useContext } from 'react'
 import { AuthContext } from '../contexts/auth-context'
+import { FaHotel } from 'react-icons/fa'
 
 const SideAppBar = styled.div`
   position: fixed;
@@ -10,57 +11,104 @@ const SideAppBar = styled.div`
   left: 0;
   width: 20%;
   height: 100%;
-  background-color: ${theme.bgColor};
+  background-color: ${(props) => props.theme.bgColor};
   z-index: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   border-right: 1px solid #e6e6e6;
+  padding-top: 7%;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
 `
 
 export const SideBarLinks = styled.button`
-  color: ${theme.fontColor};
-  font-family: ${theme.regularFont};
-  font-size: 1.5rem;
+  color: ${(props) => props.toggle ? props.theme.errorColor : props.theme.primaryColor};
+  font-family: ${(props) => props.theme.regularFont};
+  font-size: 18px;
   margin: 0;
   padding: 0;
-  text-align: center;
+  text-align: left;
   cursor: pointer;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  margin: 0.5rem 0 0 90px;
+`
+const StyledLogoPack = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 30px;
+  margin-bottom: 2px;
+  color: ${(props) => props.theme.secondaryColor};
 `
 
+const StyledLogoHotel = styled(FaHotel)`
+  font-size: 40px;
+  color: ${(props) => props.theme.primaryColor};
+`
 
+const LinkAndIconContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 1rem;
+`
 
 export default function CustomSideAppBar() {
+
+  const [toggleColor, setToggleColor] = useState(false)
 
   const auth = useContext(AuthContext)
 
   const handleLogOut = () => {
-  localStorage.removeItem('loggedInState');
-  auth.setLoggedIn(false);
-}
+    localStorage.removeItem('loggedInState')
+    auth.setLoggedIn(false)
+  }
+
+  const handleToggleColor = (e) => {
+    e.preventDefault()
+    setToggleColor(!toggleColor)
+  }
+
 
   return (
     <div>
       <SideAppBar>
-        <Link to="/">
-          <SideBarLinks>Dashboard</SideBarLinks>
-        </Link>
-        <Link to="/rooms">
-          <SideBarLinks>Rooms</SideBarLinks>
-        </Link>
-        <Link to="/bookings">
-          <SideBarLinks>Bookings</SideBarLinks>
-        </Link>
-        <Link to="/contacts">
-          <SideBarLinks>Contacts</SideBarLinks>
-        </Link>
-        <Link to="/Users">
-          <SideBarLinks>Users</SideBarLinks>
-        </Link>
-        <Link to="/login">
-          <SideBarLinks onClick={handleLogOut}>Logout</SideBarLinks>
-        </Link>
+        <StyledLogoPack>
+          <StyledLogoHotel />
+          <h1>Hotel</h1>
+        </StyledLogoPack>
+        <LinkAndIconContainer>
+          <Link to="/">
+            <SideBarLinks onClick={handleToggleColor} toggle={toggleColor}>Dashboard</SideBarLinks>
+          </Link>
+        </LinkAndIconContainer>
+        <LinkAndIconContainer>
+          <Link to="/rooms">
+            <SideBarLinks onClick={handleToggleColor} toggle={toggleColor}>Rooms</SideBarLinks>
+          </Link>
+        </LinkAndIconContainer>
+        <LinkAndIconContainer>
+          <Link to="/bookings">
+            <SideBarLinks onClick={handleToggleColor} toggle={toggleColor}>Bookings</SideBarLinks>
+          </Link>
+        </LinkAndIconContainer>
+        <LinkAndIconContainer>
+          <Link to="/users">
+            <SideBarLinks onClick={handleToggleColor} toggle={toggleColor}>Users</SideBarLinks>
+          </Link>
+        </LinkAndIconContainer>
+        <LinkAndIconContainer>
+          <Link to="/users">
+            <SideBarLinks onClick={handleToggleColor} toggle={toggleColor}>Users</SideBarLinks>
+          </Link>
+        </LinkAndIconContainer>
+        <LinkAndIconContainer>
+          <Link to="/login">
+            <SideBarLinks onClick={handleLogOut}>Logout</SideBarLinks>
+          </Link>
+        </LinkAndIconContainer>
+        {/*TODO: cambiar logout*/}
       </SideAppBar>
     </div>
   )

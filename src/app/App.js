@@ -6,12 +6,14 @@ import ContactDetails from '../components/pages/contact-details'
 import Rooms from '../components/pages/rooms'
 import RoomDetails from '../components/pages/room-details'
 import ConciergeDetails from '../components/pages/user-details'
-import Users from '../components/pages/user'
+import User from '../components/pages/user'
 import { PrivateRoute } from '../helpers/privateRoute'
 import { useState } from 'react'
 import { AuthContext } from '../contexts/auth-context'
 import CustomSideAppBar from '../components/SideBar'
 import { NavBar } from '../components/NavBar'
+import styled from 'styled-components'
+
 function App() {
   const loadState = () => {
     try {
@@ -22,15 +24,36 @@ function App() {
       console.log(err)
     }
   }
+
   const [loggedIn, setLoggedIn] = useState(loadState())
+  const [toggleMenu, settoggleMenu] = useState(false)
+
+  const handleMenuToggle = (e) => {
+    e.preventDefault()
+    console.log('toggle')
+    settoggleMenu(!toggleMenu)
+  }
+
+  const MainContent = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: ${toggleMenu ? "80%" : '100%'};
+    height: 100%;
+    background-color: #000000;
+    margin-left: ${toggleMenu? "20%" : "0"};
+  `
 
   return (
     <>
-      <div>
-        <AuthContext.Provider value={{ loggedIn, setLoggedIn }}>
-          {loggedIn ? <NavBar /> : null}
-          {loggedIn ? <CustomSideAppBar /> : null}
-          <Routes>
+      <AuthContext.Provider value={{ loggedIn, setLoggedIn }}>
+        {loggedIn ? (
+          <NavBar handler={handleMenuToggle} toggle={toggleMenu} />
+        ) : null}
+        {loggedIn && toggleMenu ? <CustomSideAppBar /> : null}
+        <MainContent>
+          <Routes >
             <Route path="/login" element={<Login />} />
             <Route
               path="/"
@@ -84,7 +107,7 @@ function App() {
               path="/users"
               element={
                 <PrivateRoute>
-                  <Users />
+                  <User />
                 </PrivateRoute>
               }
             />
@@ -105,8 +128,8 @@ function App() {
               }
             />
           </Routes>
-        </AuthContext.Provider>
-      </div>
+        </MainContent>
+      </AuthContext.Provider>
     </>
   )
 }
