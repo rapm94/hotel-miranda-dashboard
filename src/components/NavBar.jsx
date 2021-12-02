@@ -18,6 +18,7 @@ const NavBarContainer = styled.nav`
   border-bottom: 1px solid #ccc;
   width: 100%;
   min-width: 350px;
+  position: fixed;
 `
 
 const NavBarIcon = styled.a`
@@ -86,22 +87,26 @@ const HeartIcon = styled(FaRegHeart)`
   font-size: 25px;
   color: ${(props) => props.theme.primaryColor};
   margin: 0px 20px;
+  cursor: pointer;
 `
 const EnvelopeIcon = styled(FaRegEnvelope)`
   font-size: 25px;
   color: ${(props) => props.theme.primaryColor};
 
+  cursor: pointer;
   margin: 0px 20px;
 `
 const BellIcon = styled(FaRegBell)`
   font-size: 25px;
   color: ${(props) => props.theme.primaryColor};
   margin: 0px 20px;
+  cursor: pointer;
 `
 const ChatIcon = styled(FaRegCommentAlt)`
   font-size: 25px;
   color: ${(props) => props.theme.primaryColor};
   margin: 0px 20px;
+  cursor: pointer;
 `
 const AvatarContainer = styled.div`
   display: flex;
@@ -133,6 +138,7 @@ const LanguageSelector = styled.select`
   border: none;
   border-radius: 12px;
   margin: 0px 20px;
+  cursor: pointer;
 `
 const LanguageOption = styled.option` 
   font: normal normal 300 14px/21px Poppins;

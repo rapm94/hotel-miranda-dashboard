@@ -12,6 +12,7 @@ export const theme = {
   canceledColor: '#575757',
   pendingColor: '#E2E2E2',
   errorColor: '#E23428',
+  lightGreen: "#EBF1EF",
   regularFont: '"Poppins", sans-serif',
   boldFont: '"Poppins", sans-serif',
 }

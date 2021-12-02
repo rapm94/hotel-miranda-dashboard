@@ -13,6 +13,7 @@ import { AuthContext } from '../contexts/auth-context'
 import CustomSideAppBar from '../components/SideBar'
 import { NavBar } from '../components/NavBar'
 import styled from 'styled-components'
+import '../components/styles/app.scss'
 
 function App() {
   const loadState = () => {
@@ -26,7 +27,7 @@ function App() {
   }
 
   const [loggedIn, setLoggedIn] = useState(loadState())
-  const [toggleMenu, settoggleMenu] = useState(false)
+  const [toggleMenu, settoggleMenu] = useState(true)
 
   const handleMenuToggle = (e) => {
     e.preventDefault()
@@ -41,7 +42,6 @@ function App() {
     align-items: center;
     width: ${toggleMenu ? "80%" : '100%'};
     height: 100%;
-    background-color: #000000;
     margin-left: ${toggleMenu? "20%" : "0"};
   `
 
