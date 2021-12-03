@@ -13,6 +13,7 @@ export const theme = {
   pendingColor: '#E2E2E2',
   errorColor: '#E23428',
   lightGreen: "#EBF1EF",
+  lightRed: "#FFEDEC",
   regularFont: '"Poppins", sans-serif',
   boldFont: '"Poppins", sans-serif',
 }

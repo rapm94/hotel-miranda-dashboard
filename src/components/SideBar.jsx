@@ -16,7 +16,6 @@ import Button from '../components/Button'
 import { useLocation } from 'react-router-dom'
 
 const SideAppBar = styled.div`
-  position: relative;
   width: 20%;
   height: 100%;
   background-color: ${(props) => props.theme.bgColor};
@@ -25,6 +24,7 @@ const SideAppBar = styled.div`
   border-right: 1px solid #e6e6e6;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
   padding-top: 1%;
+  margin:0 40px 0 0 ;
 `
 
 export const SideBarLinks = styled.button`
@@ -32,7 +32,6 @@ export const SideBarLinks = styled.button`
     props.toggle ? props.theme.errorColor : props.theme.primaryColor};
   font-family: ${(props) => props.theme.regularFont};
   font-size: 18px;
-  margin: 0;
   padding: 0;
   text-align: left;
   cursor: pointer;
@@ -120,9 +119,9 @@ const StyledAdminDashboard = styled.div`
 `;
 
 const StyledCopyright = styled.div`
-  color: ${(props) => props.theme.lightGreen};
-  font: normal normal 300 14px/21px Poppins;
+  font: normal normal 600 14px/21px Poppins;
   text-align: left;
+  color: ${(props) => props.theme.titleColor};
 `;
 
 const SelectedButtonDecoration = styled.div`
@@ -146,11 +145,11 @@ export default function CustomSideAppBar() {
 
 
   return (
-    <div>
+    
       <SideAppBar>
         <StyledLogoPack>
           <StyledLogoHotel />
-          <h1>Hotel</h1>
+          <h1>Travl</h1>
         </StyledLogoPack>
         <LinkAndIconContainer>
           <DashboardIcon />
@@ -233,6 +232,5 @@ export default function CustomSideAppBar() {
           </StyledCopyrightContainer>
         </StyledCopyrightContainer>
       </SideAppBar>
-    </div>
   )
 }

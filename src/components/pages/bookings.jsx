@@ -1,9 +1,15 @@
 import React from 'react'
+import { RoomList } from '../RoomList'
+import { DndProvider } from 'react-dnd'
+import { HTML5Backend } from 'react-dnd-html5-backend'
+
 
 export default function Bookings() {
     return (
-        <div>
-            <h1>Bookings</h1>
-        </div>
+        <div id='room' style={{minWidth: '100%'}}>
+        <DndProvider backend={HTML5Backend}>
+            <RoomList />
+        </DndProvider>
+    </div>
     )
 }
