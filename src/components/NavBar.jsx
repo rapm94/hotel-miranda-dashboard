@@ -18,7 +18,7 @@ const NavBarContainer = styled.nav`
   border-bottom: 1px solid #ccc;
   width: 100%;
   min-width: 350px;
-  position: fixed;
+  position: relative;
 `
 
 const NavBarIcon = styled.a`

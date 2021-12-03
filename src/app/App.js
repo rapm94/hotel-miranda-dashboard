@@ -5,7 +5,8 @@ import Contacts from '../components/pages/contacts'
 import ContactDetails from '../components/pages/contact-details'
 import Rooms from '../components/pages/rooms'
 import RoomDetails from '../components/pages/room-details'
-import ConciergeDetails from '../components/pages/user-details'
+import Bookings from '../components/pages/bookings'
+import BookingDetails from '../components/pages/booking-details'
 import User from '../components/pages/user'
 import { PrivateRoute } from '../helpers/privateRoute'
 import { useState } from 'react'
@@ -37,12 +38,7 @@ function App() {
 
   const MainContent = styled.div`
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: ${toggleMenu ? "80%" : '100%'};
-    height: 100%;
-    margin-left: ${toggleMenu? "20%" : "0"};
+    flex-direction: row;
   `
 
   return (
@@ -51,9 +47,11 @@ function App() {
         {loggedIn ? (
           <NavBar handler={handleMenuToggle} toggle={toggleMenu} />
         ) : null}
-        {loggedIn && toggleMenu ? <CustomSideAppBar /> : null}
+        
+        
         <MainContent>
-          <Routes >
+        {loggedIn && toggleMenu ? <CustomSideAppBar /> : null}
+        <Routes >
             <Route path="/login" element={<Login />} />
             <Route
               path="/"
@@ -111,24 +109,34 @@ function App() {
                 </PrivateRoute>
               }
             />
-            <Route
-              path="/concierge/:id"
+<Route
+              path="/bookings"
               element={
                 <PrivateRoute>
-                  <ConciergeDetails />
+                  <Bookings />
+                </PrivateRoute>
+              }
+            />
+
+            <Route
+              path="/bookings/:id"
+              element={
+                <PrivateRoute>
+                  <BookingDetails />
                 </PrivateRoute>
               }
             />
             <Route
-              path="/concierge/:id/edit"
+              path="/bookings/:id/edit"
               element={
                 <PrivateRoute>
-                  <ConciergeDetails />
+                  <BookingDetails />
                 </PrivateRoute>
               }
             />
-          </Routes>
+           </Routes>
         </MainContent>
+       
       </AuthContext.Provider>
     </>
   )
