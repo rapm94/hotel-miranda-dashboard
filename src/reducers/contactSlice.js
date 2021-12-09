@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const contactSlice = createSlice({
   name: 'contact',
   initialState: {
-    contacts: [],
+    contacts:  [],
     loading: false,
     error: null,
   },
@@ -28,8 +28,24 @@ const contactSlice = createSlice({
       })
     },
     getAllContacts: (state, action) => {
-      state.contacts = action.payload
+      return state.contacts
     },
+    getAContact: (state, action) => {
+      return state.contacts.filter(
+        (contact) => contact.id === action.payload.id,
+      )
+    }, 
+    modifyAContact: (state, action) => {
+      const contact = state.contacts.find(
+        (contact) => contact.id === action.payload.id,
+      )
+      if (contact) {
+        contact.firstName = action.payload.firstName
+        contact.lastName = action.payload.lastName
+        contact.email = action.payload.email
+        contact.phone = action.payload.phone
+      }
+    }
   },
 })
 
@@ -40,6 +56,6 @@ export const {
   getAllContacts,
 } = contactSlice.actions
 
-export const contactReducer = contactSlice.reducer
-
 export const contactSelector = (state) => state.contact.contacts
+
+export const contactReducer = contactSlice.reducer

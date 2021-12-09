@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import { HiOutlineMenuAlt2 } from 'react-icons/hi'
 import { BiSearchAlt2 } from 'react-icons/bi'
 import {
-  FaRegHeart,
   FaRegEnvelope,
   FaRegBell,
   FaRegCommentAlt,
@@ -18,8 +17,11 @@ const NavBarContainer = styled.nav`
   border-bottom: 1px solid #ccc;
   width: 100%;
   min-width: 350px;
-  position: relative;
+  position: fixed;
+  background-color: ${(props) => props.theme.bgColor};   
+  z-index: 999;  
 `
+
 
 const NavBarIcon = styled.a`
   display: flex;
@@ -83,12 +85,7 @@ const MenuAndSearchContainer = styled.div`
   width: 100%;
   justify-self: flex-end;
 `
-const HeartIcon = styled(FaRegHeart)`
-  font-size: 25px;
-  color: ${(props) => props.theme.primaryColor};
-  margin: 0px 20px;
-  cursor: pointer;
-`
+
 const EnvelopeIcon = styled(FaRegEnvelope)`
   font-size: 25px;
   color: ${(props) => props.theme.primaryColor};
@@ -175,7 +172,6 @@ export function NavBar(props) {
             <StyledSearchBar />
             <StyledSearchIcon />
           </StyledSearchContainer>
-          <HeartIcon />
           <EnvelopeIcon />
           <BellIcon />
           <ChatIcon />

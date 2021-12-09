@@ -9,15 +9,16 @@ import Bookings from '../components/pages/bookings'
 import BookingDetails from '../components/pages/booking-details'
 import User from '../components/pages/user'
 import { PrivateRoute } from '../helpers/privateRoute'
-import { useState } from 'react'
-import { AuthContext } from '../contexts/auth-context'
+import { useState, useContext } from 'react'
 import CustomSideAppBar from '../components/SideBar'
 import { NavBar } from '../components/NavBar'
 import styled from 'styled-components'
 import '../components/styles/app.scss'
+import { AuthProvider } from '../contexts/AuthContext'
 
 function App() {
-  const loadState = () => {
+  
+/*   const loadState = () => {
     try {
       return localStorage.getItem('loggedInState')
         ? localStorage.getItem('loggedInState')
@@ -27,8 +28,10 @@ function App() {
     }
   }
 
-  const [loggedIn, setLoggedIn] = useState(loadState())
-  const [toggleMenu, settoggleMenu] = useState(true)
+  const [loggedIn, setLoggedIn] = useState(loadState()) */
+
+  const { isAuthenticated } = useContext(AuthProvider);
+  const [toggleMenu, settoggleMenu] = useState(true);
 
   const handleMenuToggle = (e) => {
     e.preventDefault()
@@ -39,18 +42,19 @@ function App() {
   const MainContent = styled.div`
     display: flex;
     flex-direction: row;
+    padding: 100px 0 0 ${toggleMenu ? '20.5%' : '0'};
+
   `
 
   return (
     <>
-      <AuthContext.Provider value={{ loggedIn, setLoggedIn }}>
-        {loggedIn ? (
+      <AuthProvider>
+        {isAuthenticated ? (
           <NavBar handler={handleMenuToggle} toggle={toggleMenu} />
         ) : null}
         
-        
-        <MainContent>
-        {loggedIn && toggleMenu ? <CustomSideAppBar /> : null}
+        {isAuthenticated && toggleMenu ? <CustomSideAppBar /> : null}
+        <MainContent >
         <Routes >
             <Route path="/login" element={<Login />} />
             <Route
@@ -136,8 +140,10 @@ function App() {
             />
            </Routes>
         </MainContent>
-       
-      </AuthContext.Provider>
+ 
+
+      </AuthProvider>
+      
     </>
   )
 }

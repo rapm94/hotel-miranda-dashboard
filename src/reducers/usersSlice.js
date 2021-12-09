@@ -1,6 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { userSelector } from './userSlice'
-import { useSelector } from 'react-redux'
 
 /* function usersInitialState() {
   const user = useSelector(userSelector)
@@ -11,7 +9,7 @@ import { useSelector } from 'react-redux'
 const usersSlice = createSlice({
   name: 'users',
   initialState: {
-    users:[] /* usersInitialState() */,
+    users: [] /* usersInitialState() */,
     loading: false,
     error: null,
   },
@@ -56,6 +54,6 @@ export const {
   updateUser,
 } = usersSlice.actions
 
-export const usersReducer = usersSlice.reducer
-
 export const usersSelector = (state) => state.users.users
+
+export const usersReducer = usersSlice.reducer

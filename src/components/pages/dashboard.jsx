@@ -5,22 +5,23 @@ import { BsCalendarCheck } from "react-icons/bs";
 import { Calendar } from "../Calendar";
 
 const StyledGrid = styled.div`
-  width: 100%;
+  width: 95%;
   display: grid;
   grid-template-columns: auto auto auto auto;
   grid-template-rows: auto auto auto auto auto auto;
-  grid-gap: 40px;
+ dd
 `;
 
 const StyledKpi = styled.div`
   display: flex;
   align-items: center;
   justify-content: left;
-  min-width: 340px;
+  min-width: 200px;
   min-height: 125px;
   background-color: ${(props) => props.theme.bgColor};
   box-shadow: 0px 4px 4px #00000005;
   border-radius: 12px;
+  margin:10px 30px;
 `;
 
 const StyledKpiData = styled.div``;
