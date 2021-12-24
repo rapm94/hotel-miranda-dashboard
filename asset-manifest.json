@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/rapm94/hotel-miranda-dashboard.git/static/css/main.9e3fa5a5.chunk.css",
-    "main.js": "/rapm94/hotel-miranda-dashboard.git/static/js/main.fa5a8a36.chunk.js",
-    "main.js.map": "/rapm94/hotel-miranda-dashboard.git/static/js/main.fa5a8a36.chunk.js.map",
-    "runtime-main.js": "/rapm94/hotel-miranda-dashboard.git/static/js/runtime-main.5c2882d7.js",
-    "runtime-main.js.map": "/rapm94/hotel-miranda-dashboard.git/static/js/runtime-main.5c2882d7.js.map",
-    "static/css/2.7d441899.chunk.css": "/rapm94/hotel-miranda-dashboard.git/static/css/2.7d441899.chunk.css",
-    "static/js/2.d9348c2d.chunk.js": "/rapm94/hotel-miranda-dashboard.git/static/js/2.d9348c2d.chunk.js",
-    "static/js/2.d9348c2d.chunk.js.map": "/rapm94/hotel-miranda-dashboard.git/static/js/2.d9348c2d.chunk.js.map",
-    "index.html": "/rapm94/hotel-miranda-dashboard.git/index.html",
-    "static/css/2.7d441899.chunk.css.map": "/rapm94/hotel-miranda-dashboard.git/static/css/2.7d441899.chunk.css.map",
-    "static/css/main.9e3fa5a5.chunk.css.map": "/rapm94/hotel-miranda-dashboard.git/static/css/main.9e3fa5a5.chunk.css.map",
-    "static/js/2.d9348c2d.chunk.js.LICENSE.txt": "/rapm94/hotel-miranda-dashboard.git/static/js/2.d9348c2d.chunk.js.LICENSE.txt"
+    "main.css": "/hotel-miranda-dashboard/static/css/main.9e3fa5a5.chunk.css",
+    "main.js": "/hotel-miranda-dashboard/static/js/main.fa5a8a36.chunk.js",
+    "main.js.map": "/hotel-miranda-dashboard/static/js/main.fa5a8a36.chunk.js.map",
+    "runtime-main.js": "/hotel-miranda-dashboard/static/js/runtime-main.6df25690.js",
+    "runtime-main.js.map": "/hotel-miranda-dashboard/static/js/runtime-main.6df25690.js.map",
+    "static/css/2.7d441899.chunk.css": "/hotel-miranda-dashboard/static/css/2.7d441899.chunk.css",
+    "static/js/2.b3b8b79d.chunk.js": "/hotel-miranda-dashboard/static/js/2.b3b8b79d.chunk.js",
+    "static/js/2.b3b8b79d.chunk.js.map": "/hotel-miranda-dashboard/static/js/2.b3b8b79d.chunk.js.map",
+    "index.html": "/hotel-miranda-dashboard/index.html",
+    "static/css/2.7d441899.chunk.css.map": "/hotel-miranda-dashboard/static/css/2.7d441899.chunk.css.map",
+    "static/css/main.9e3fa5a5.chunk.css.map": "/hotel-miranda-dashboard/static/css/main.9e3fa5a5.chunk.css.map",
+    "static/js/2.b3b8b79d.chunk.js.LICENSE.txt": "/hotel-miranda-dashboard/static/js/2.b3b8b79d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.5c2882d7.js",
+    "static/js/runtime-main.6df25690.js",
     "static/css/2.7d441899.chunk.css",
-    "static/js/2.d9348c2d.chunk.js",
+    "static/js/2.b3b8b79d.chunk.js",
     "static/css/main.9e3fa5a5.chunk.css",
     "static/js/main.fa5a8a36.chunk.js"
   ]
