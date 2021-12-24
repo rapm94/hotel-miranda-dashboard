@@ -1,8 +1,8 @@
 {
-  "homepage":"http://rapm94.github.io/hotel-miranda-dashboard",
+  "homepage":"https://rapm94.github.io/hotel-miranda-dashboard",
   "name": "hotel-miranda-dashboard",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@dicebear/avatars": "^4.10.1",
     "@dicebear/avatars-male-sprites": "^4.10.1",
