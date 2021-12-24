@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.9e3fa5a5.chunk.css",
-    "main.js": "/static/js/main.fa5a8a36.chunk.js",
-    "main.js.map": "/static/js/main.fa5a8a36.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.ccbb2cdb.js",
-    "runtime-main.js.map": "/static/js/runtime-main.ccbb2cdb.js.map",
-    "static/css/2.7d441899.chunk.css": "/static/css/2.7d441899.chunk.css",
-    "static/js/2.bc0251e8.chunk.js": "/static/js/2.bc0251e8.chunk.js",
-    "static/js/2.bc0251e8.chunk.js.map": "/static/js/2.bc0251e8.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/2.7d441899.chunk.css.map": "/static/css/2.7d441899.chunk.css.map",
-    "static/css/main.9e3fa5a5.chunk.css.map": "/static/css/main.9e3fa5a5.chunk.css.map",
-    "static/js/2.bc0251e8.chunk.js.LICENSE.txt": "/static/js/2.bc0251e8.chunk.js.LICENSE.txt"
+    "main.css": "/rapm94/hotel-miranda-dashboard.git/static/css/main.9e3fa5a5.chunk.css",
+    "main.js": "/rapm94/hotel-miranda-dashboard.git/static/js/main.fa5a8a36.chunk.js",
+    "main.js.map": "/rapm94/hotel-miranda-dashboard.git/static/js/main.fa5a8a36.chunk.js.map",
+    "runtime-main.js": "/rapm94/hotel-miranda-dashboard.git/static/js/runtime-main.5c2882d7.js",
+    "runtime-main.js.map": "/rapm94/hotel-miranda-dashboard.git/static/js/runtime-main.5c2882d7.js.map",
+    "static/css/2.7d441899.chunk.css": "/rapm94/hotel-miranda-dashboard.git/static/css/2.7d441899.chunk.css",
+    "static/js/2.d9348c2d.chunk.js": "/rapm94/hotel-miranda-dashboard.git/static/js/2.d9348c2d.chunk.js",
+    "static/js/2.d9348c2d.chunk.js.map": "/rapm94/hotel-miranda-dashboard.git/static/js/2.d9348c2d.chunk.js.map",
+    "index.html": "/rapm94/hotel-miranda-dashboard.git/index.html",
+    "static/css/2.7d441899.chunk.css.map": "/rapm94/hotel-miranda-dashboard.git/static/css/2.7d441899.chunk.css.map",
+    "static/css/main.9e3fa5a5.chunk.css.map": "/rapm94/hotel-miranda-dashboard.git/static/css/main.9e3fa5a5.chunk.css.map",
+    "static/js/2.d9348c2d.chunk.js.LICENSE.txt": "/rapm94/hotel-miranda-dashboard.git/static/js/2.d9348c2d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.ccbb2cdb.js",
+    "static/js/runtime-main.5c2882d7.js",
     "static/css/2.7d441899.chunk.css",
-    "static/js/2.bc0251e8.chunk.js",
+    "static/js/2.d9348c2d.chunk.js",
     "static/css/main.9e3fa5a5.chunk.css",
     "static/js/main.fa5a8a36.chunk.js"
   ]
