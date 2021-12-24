@@ -13,7 +13,7 @@ ReactDOM.render(
   <Provider store={store}>
     <ThemeProvider theme={theme}>
       <AuthProvider>
-        <Router>
+        <Router basename="/proyecto-miranda-dashboard">
           <App />
         </Router>
       </AuthProvider>
