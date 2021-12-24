@@ -1,4 +1,4 @@
-[{"id":2,"name":"9/26/2021","mail":"evan1@uiuc.edu","hash":"242161602-6"},
+export const Users = [{"id":2,"name":"9/26/2021","mail":"evan1@uiuc.edu","hash":"242161602-6"},
 {"id":3,"name":"4/11/2021","mail":"cmournian2@webeden.co.uk","hash":"184826786-X"},
 {"id":4,"name":"6/20/2021","mail":"gvassay3@nih.gov","hash":"652622143-2"},
 {"id":5,"name":"9/3/2021","mail":"ahearle4@mediafire.com","hash":"273438335-7"},

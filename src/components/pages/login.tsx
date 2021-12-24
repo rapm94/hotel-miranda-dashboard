@@ -1,5 +1,5 @@
-import { useNavigate, Navigate } from 'react-router-dom'
-import { AuthContext } from './../../contexts/auth-context'
+import { useNavigate } from 'react-router-dom'
+import { AuthContext } from '../../contexts/AuthContext'
 import { useContext, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { FaHotel } from 'react-icons/fa'
@@ -15,7 +15,9 @@ const LoginContainer = styled.div`
   background-color: ${(props) => props.theme.bgColor};
   border-radius: 10px;
   box-shadow: 0px 16px 30px #00000014;
-  margin: 120px auto;
+  top: 20%;
+  left: 33%;
+  position: absolute;
 `
 
 const LoginForm = styled.form`
@@ -59,7 +61,7 @@ const StyledLogoHotel = styled(FaHotel)`
 export default function Login() {
   let navigate = useNavigate()
 
-  const { loggedIn, setLoggedIn } = useContext(AuthContext)
+  const { login, isAuthenticated } = useContext(AuthContext)
 
   const [userId, setUserId] = useState('')
   const [password, setPassword] = useState('')
@@ -67,39 +69,35 @@ export default function Login() {
   const userName = 'raul'
   const userPassword = '123'
 
-  const saveState = (state) => {
-    try {
-      localStorage.setItem('loggedInState', state)
-    } catch (e) {
-      console.log(e)
-    }
+  const user = {
+    userId: userName,
+    password: userPassword,
   }
-
+ 
   useEffect(() => {
-    if (loggedIn) {
-      navigate('/', { replace: true })
+    if (isAuthenticated) {
+      console.log(isAuthenticated)
+      navigate('/')
     }
-  }, [loggedIn, navigate])
+  }, [isAuthenticated, navigate]) 
 
-  const handleChange = (e) => {
+  const handleChangeUser = (e:any) => {
     e.preventDefault()
     const userId = e.target.value
     setUserId(userId)
   }
-  const handleChangePassword = (e) => {
+  const handleChangePassword = (e:any) => {
     e.preventDefault()
     const passwordId = e.target.value
     setPassword(passwordId)
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e:React.SyntheticEvent) => {
     e.preventDefault()
     if (userId === userName && password === userPassword) {
-      setLoggedIn(true)
-      saveState(true)
-    } else {
-      ;<Navigate to="/login" />
-    }
+      login(user)
+      navigate('/')
+    } 
   }
   return (
     <LoginContainer>
@@ -110,7 +108,7 @@ export default function Login() {
         <LoginInput
           type="text"
           className="user-input"
-          onChange={handleChange}
+          onChange={handleChangeUser}
         />
         <label className="input-label">Password</label>
         <LoginInput

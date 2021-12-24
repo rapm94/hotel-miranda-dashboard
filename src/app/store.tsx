@@ -1,14 +1,14 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
-import { userReducer } from '../reducers/userSlice'
-import { authReducer } from '../reducers/authSlice'
 import { contactReducer } from '../reducers/contactSlice'
+import { bookingReducer } from '../reducers/bookingSlice'
 import { usersReducer } from '../reducers/usersSlice'
+import { roomsReducer } from '../reducers/roomSlice'
 
 const rootReducer = combineReducers({
-  userReducer,
-  authReducer,
   contactReducer,
   usersReducer,
+  roomsReducer,
+  bookingReducer,
 })
 
 const store = configureStore({

@@ -17,7 +17,7 @@ export const RoomListCard = ({
   index,
   moveCard,
 }) => {
-  const ref = useRef(null);
+  const ref = useRef<any>(null);
   const [{ handlerId }, drop] = useDrop({
     accept: ItemTypes.CARD,
     collect(monitor) {
@@ -25,7 +25,7 @@ export const RoomListCard = ({
         handlerId: monitor.getHandlerId(),
       };
     },
-    hover(item, monitor) {
+    hover(item:any, monitor) {
       if (!ref.current) {
         return;
       }
@@ -36,14 +36,14 @@ export const RoomListCard = ({
         return;
       }
       // Determine rectangle on screen
-      const hoverBoundingRect = ref.current?.getBoundingClientRect();
+      const hoverBoundingRect = ref.current.getBoundingClientRect();
       // Get vertical middle
       const hoverMiddleY =
         (hoverBoundingRect.bottom - hoverBoundingRect.top) / 2;
       // Determine mouse position
       const clientOffset = monitor.getClientOffset();
       // Get pixels to the top
-      const hoverClientY = clientOffset.y - hoverBoundingRect.top;
+      const hoverClientY = clientOffset!.y - hoverBoundingRect.top;
       // Only perform the move when the mouse has crossed half of the items height
       // When dragging downwards, only move when the cursor is below 50%
       // When dragging upwards, only move when the cursor is above 50%
@@ -78,7 +78,7 @@ export const RoomListCard = ({
   return (
     <StyledData ref={ref} style={{ opacity }} data-handler-id={handlerId}>
       <td>
-        <img src={photo}/>
+        <img src={photo} alt='room'/>
         <div style={{display: 'inline-block'}}>
             <div style={{display: 'block'}}>
                 {roomNumber}

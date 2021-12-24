@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useContext } from 'react'
-import { AuthContext } from '../contexts/auth-context'
+import { AuthContext } from '../contexts/AuthContext'
 import { FaHotel } from 'react-icons/fa'
 import {
   RiDashboardLine,
@@ -12,8 +12,13 @@ import {
   RiArticleLine,
   RiLogoutBoxRLine,
 } from 'react-icons/ri'
-import Button from '../components/Button'
+import Button from './Button'
 import { useLocation } from 'react-router-dom'
+
+interface SideBarLinksProps {
+  color?: string
+  toggle?: boolean
+}
 
 const SideAppBar = styled.div`
   width: 17.5%;
@@ -29,10 +34,10 @@ const SideAppBar = styled.div`
   z-index: 999;
 `
 
-export const SideBarLinks = styled.button`
-  color: ${(props) =>
+export const SideBarLinks = styled.button<SideBarLinksProps>`
+  color: ${(props:any) =>
     props.toggle ? props.theme.errorColor : props.theme.primaryColor};
-  font-family: ${(props) => props.theme.regularFont};
+  font-family: ${(props?) => props.theme.regularFont};
   font-size: 14px;
   padding: 0;
   text-align: left;
@@ -100,17 +105,18 @@ const UserContainer = styled.div`
   align-items: center;
   justify-content: center;
   width: 200px;
-  height: 150px;
+  height: 190px;
   box-shadow: 0px 15px 30px #00000010;
   border-radius: 18px;
+  margin: 30px 0 0 30px;
 `
 const StyledCopyrightContainer = styled.div`
   height: 135px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  text-align: left;
-  margin: 0 auto;
+  text-align: center;
+  margin: 20px 0 0 30px;
 `
 
 const StyledAdminDashboard = styled.div`
@@ -133,17 +139,9 @@ const SelectedButtonDecoration = styled.div`
 `
 
 export default function CustomSideAppBar() {
+  const { logout } = useContext(AuthContext)
+  
   const [toggleColor, setToggleColor] = useState(false)
-
-  const auth = useContext(AuthContext)
-
-  const handleLogOut = () => {
-    localStorage.removeItem('loggedInState')
-    auth.setLoggedIn(false)
-  }
-
-  const location = useLocation()
-  const path = location.pathname
 
   return (
     <SideAppBar>
@@ -185,7 +183,7 @@ export default function CustomSideAppBar() {
       <LinkAndIconContainer>
         <LogOutIcon />
         <Link to="/login">
-          <SideBarLinks onClick={handleLogOut}>Logout</SideBarLinks>
+          <SideBarLinks onClick={logout}>Logout</SideBarLinks>
         </Link>
       </LinkAndIconContainer>
       <UserContainer>
@@ -217,7 +215,7 @@ export default function CustomSideAppBar() {
         >
           rapm_94@hotmail.com
         </div>
-        <Button contact weight="500">
+        <Button contact weight="500" style={{margin: '0 0 20px 0', width:'80px', height: '40px' }}>
           Edit
         </Button >
       </UserContainer>

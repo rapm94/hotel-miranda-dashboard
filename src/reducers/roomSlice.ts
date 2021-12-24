@@ -20,12 +20,12 @@ const RoomsSlice = createSlice({
       )
       state.rooms[roomIndex] = action.payload
     },
-    setRooms: (state, action) => {
-      state.rooms = action.payload
-    },
+    //Function that returns just one room
     getRooms: (state, action) => {
-      state.loading = false
-      state.rooms = action.payload
+      const roomIndex = state.rooms.findIndex(
+        (room) => room.id === action.payload.id,
+      )
+      return roomIndex
     },
     getARoom: (state, action) => {
       state.loading = false

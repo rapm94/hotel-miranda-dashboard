@@ -16,6 +16,7 @@ export const theme = {
   lightRed: "#FFEDEC",
   regularFont: '"Poppins", sans-serif',
   boldFont: '"Poppins", sans-serif',
+  terciaryBgColor: "#FCFCFC",
 }
 
 export const darkTheme = {

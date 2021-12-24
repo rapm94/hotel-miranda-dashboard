@@ -1,4 +1,4 @@
-[{"id":1,"date":"11/10/2021","customer":"Harmonie Bathowe","mail":"hbathowe0@ihg.com","phone":"656-294-7846","comment":"Acute lacrimal canaliculitis of left lacrimal passage"},
+export const Contacts = [{"id":1,"date":"11/10/2021","customer":"Harmonie Bathowe","mail":"hbathowe0@ihg.com","phone":"656-294-7846","comment":"Acute lacrimal canaliculitis of left lacrimal passage"},
 {"id":2,"date":"9/12/2021","customer":"Dominic Throssell","mail":"dthrossell1@wix.com","phone":"400-287-5377","comment":"Heat exhaustion due to salt depletion, subsequent encounter"},
 {"id":3,"date":"1/22/2021","customer":"Catarina Sudworth","mail":"csudworth2@flavors.me","phone":"406-611-6165","comment":"Occ of anml-drn veh inj by fall fr veh in nonclsn acc, subs"},
 {"id":4,"date":"3/26/2021","customer":"Christalle Byrom","mail":"cbyrom3@studiopress.com","phone":"810-946-1704","comment":"Wedge comprsn fx first lum vert, subs for fx w routn heal"},

@@ -1,14 +1,15 @@
 
-const saveAuthState = (state) => {  
+const saveAuthState = (state:any) => {  
   localStorage.setItem('auth', JSON.stringify(state));  
 };
 
-export function AuthReducer (state, action) {
+export const AuthReducer = (state:any, action:any) => {
+
     switch (action.type) {
       case "LOGIN":
         saveAuthState({
           isAuthenticated: true,
-          user: action.user
+          user: action.payload
         });
         return {
           ...state,
@@ -48,3 +49,4 @@ export function AuthReducer (state, action) {
         return state;
     }
   }
+
