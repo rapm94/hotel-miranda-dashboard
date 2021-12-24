@@ -1,4 +1,4 @@
-import React from 'react'
+
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router } from 'react-router-dom'
 import App from './app/App'
@@ -13,7 +13,7 @@ ReactDOM.render(
   <Provider store={store}>
     <ThemeProvider theme={theme}>
       <AuthProvider>
-        <Router basename="/proyecto-miranda-dashboard">
+        <Router basename={process.env.PUBLIC_URL}>
           <App />
         </Router>
       </AuthProvider>
