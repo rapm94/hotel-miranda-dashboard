@@ -31,6 +31,39 @@ const RoomsSlice = createSlice({
       state.loading = false
       state.rooms = action.payload
     },
+    orderByRooms: (state, action) => {
+      if (action.payload === "higher") {
+        state.rooms = state.rooms.sort((a, b) => {
+          if (a.price > b.price) {
+            return -1;
+          }
+          if (a.price < b.price) {
+            return 1;
+          }
+          return 0;
+        });
+      } else if (action.payload === "lower") {
+        state.rooms = state.rooms.sort((a, b) => {
+          if (a.price > b.price) {
+            return 1;
+          }
+          if (a.price < b.price) {
+            return -1;
+          }
+          return 0;
+        });
+      } else if (action.payload === "roomNumber") {
+        state.rooms = state.rooms.sort((a, b) => {
+          if (a.price > b.price) {
+            return 1;
+          }
+          if (a.price < b.price) {
+            return -1;
+          }
+          return 0;
+        });
+      }
+    },
   },
 })
 
@@ -43,6 +76,7 @@ export const {
   getAllRoomsSuccess,
   getOneRoom,
   getOneRoomSuccess,
+  orderByRooms,
 } = RoomsSlice.actions
 
 export const roomsSelector = (state) => state.rooms.rooms

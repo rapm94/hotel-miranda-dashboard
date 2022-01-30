@@ -52,6 +52,7 @@ export const {
   deleteUser,
   deleteAllUsers,
   updateUser,
+  sortUsers
 } = usersSlice.actions
 
 export const usersSelector = (state) => state.users.users

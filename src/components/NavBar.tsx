@@ -40,8 +40,8 @@ const HamburgerMenu = styled(HiOutlineMenuAlt2)`
 const StyledSearchContainer = styled.form`
   display: flex;
   align-items: center;
-  width: 351px;
-  height: 57px;
+  width: 30%;
+  height: 40px;
   background-color: ${(props) => props.theme.secondaryBgColor};
   border: none;
   border-radius: 12px;
@@ -74,7 +74,7 @@ const HamburgerMenuContainer = styled.div`
   height: 70px;
   width: 70px;
   justify-self: flex-start;
-  margin-left: ${(props) => (props.toggle ? '300px' : '-15px')};
+  margin-left: ${(props) => (props.toggle ? '17.5%' : '-5px')};
 `
 const MenuAndSearchContainer = styled.div`
   display: flex;

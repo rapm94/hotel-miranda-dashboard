@@ -32,6 +32,7 @@ const SideAppBar = styled.div`
   margin: 0 40px 0 0;
   position: fixed;
   z-index: 999;
+  align-content: center;
 `
 
 export const SideBarLinks = styled.button<SideBarLinksProps>`
@@ -51,8 +52,7 @@ const StyledLogoPack = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-right: 30px;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   color: ${(props) => props.theme.secondaryColor};
 `
 
@@ -65,7 +65,7 @@ const LinkAndIconContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 10px 0 0 70px;
+  margin: 10px 0 0 110px;
 `
 
 const DashboardIcon = styled(RiDashboardLine)`
@@ -108,7 +108,7 @@ const UserContainer = styled.div`
   height: 190px;
   box-shadow: 0px 15px 30px #00000010;
   border-radius: 18px;
-  margin: 30px 0 0 30px;
+  margin: 30px 0 0 65px;
 `
 const StyledCopyrightContainer = styled.div`
   height: 135px;
@@ -124,12 +124,15 @@ const StyledAdminDashboard = styled.div`
   font: normal normal 300 12px Poppins;
   letter-spacing: 0px;
   color: ${(props) => props.theme.titleColor};
+  margin-left: 50px;
+  margin-top: 30px;
 `
 
 const StyledCopyright = styled.div`
   font: normal normal 600 10px Poppins;
   text-align: left;
   color: ${(props) => props.theme.titleColor};
+  margin-left: 40px;
 `
 
 const SelectedButtonDecoration = styled.div`

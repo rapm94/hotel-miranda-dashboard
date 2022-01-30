@@ -12,21 +12,21 @@ const bookingState = () => {
 const bookingSlice = createSlice({
   name: 'bookings',
   initialState: {
-    bookings: bookingState, 
+    booking: bookingState, 
     loading: false,
     error: null,
   },
   reducers: {
     createBooking: (state, action) => {
-      state.bookings.push(action.payload)
+      state.booking.push(action.payload)
     },
     deleteBooking: (state, action) => {
-      state.bookings = state.bookings.filter(
+      state.booking = state.booking.filter(
         (booking) => booking.id !== action.payload,
       )
     },
     modifyBooking: (state, action) => {
-      const booking = state.bookings.find(
+      const booking = state.booking.find(
         (booking) => booking.id === action.payload.id,
       )
       Object.assign(booking, action.payload)
@@ -34,13 +34,13 @@ const bookingSlice = createSlice({
     // function that returns the booking state sorted by date
     orderBookings: (state, action) => {
       if (action.payload === 'new' || action.payload === 'old') {
-        state.bookings.sort((a, b) => {
+        state.booking.sort((a, b) => {
           const dateA = new Date(a.date)
           const dateB = new Date(b.date)
           if (action.payload === 'new') {
-            return dateB - dateA
+            return dateB.getTime() - dateA.getTime()
           } else {
-            return dateA - dateB
+            return dateA.getTime() - dateB.getTime()
           }
         })
       } else if (
@@ -49,22 +49,20 @@ const bookingSlice = createSlice({
         action.payload === 'checkOut' ||
         action.payload === 'roomType'
       ) {
-        state.bookings.sort((a, b) => {
-          if (action.payload === 'guest') {
-            return a.guest.localeCompare(b.guest)
-          } else if (action.payload === 'checkIn') {
-            return a.checkIn.localeCompare(b.checkIn)
-          } else if (action.payload === 'checkOut') {
-            return a.checkOut.localeCompare(b.checkOut)
-          } else if (action.payload === 'roomType') {
-            return a.roomType.localeCompare(b.roomType)
+        state.booking.sort((a, b) => {
+          if (a[action.payload] > b[action.payload]) {
+            return 1;
           }
-        })
+          if (a[action.payload] < b[action.payload]) {
+            return -1;
+          }
+          return 0;
+        });
       }
     },
     //function that return a single booking
-    getBooking: (state, action) => {
-      state.bookings.find((booking) => booking.id === action.payload)
+    detailedBooking: (state, action) => {
+      state.id = action.payload;
     },
   },
 })
@@ -73,12 +71,11 @@ export const {
   createBooking,
   deleteBooking,
   modifyBooking,
-  getBooking,
-  getBookings,
+  detailedBooking,
   orderBookings,
 } = bookingSlice.actions
 
 export const bookingSelector = (state) => state.bookings
-console.log(bookingSelector)
+
 
 export const bookingReducer = bookingSlice.reducer

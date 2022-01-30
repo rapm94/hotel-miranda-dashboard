@@ -9,6 +9,7 @@ import RoomDetails from '../components/pages/room-details'
 import Bookings from '../components/pages/bookings'
 import BookingDetails from '../components/pages/booking-details'
 import User from '../components/pages/user'
+import NewUser from '../components/pages/newUser'
 import { PrivateRoute } from '../helpers/privateRoute'
 import { useState, useContext } from 'react'
 import CustomSideAppBar from '../components/SideBar'
@@ -33,7 +34,8 @@ function App  ():JSX.Element {
   const MainContent = styled.div`
     display: flex;
     flex-direction: row;
-    padding: 100px 0 0 ${toggleMenu ? '20.5%' : '0'};
+    padding: 100px 0 0 ${toggleMenu ? '20.5%' : '2.5%'};
+    background-color: ${(props) => props.theme.secondaryBgColor};
   `
   const { state } = useContext(AuthContext)
   const { isAuthenticated } = state
@@ -104,6 +106,15 @@ function App  ():JSX.Element {
               </PrivateRoute>
             }
           />
+          <Route
+          path="/users/new-user"
+          element={
+            <PrivateRoute>
+              <NewUser/>
+              </PrivateRoute>
+          }
+          >
+          </Route>
           <Route
             path="/bookings"
             element={
