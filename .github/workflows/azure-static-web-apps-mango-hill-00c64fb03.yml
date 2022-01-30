@@ -1,6 +1,4 @@
 name: Azure Static Web Apps CI/CD
-  env:
-    CI: ""
 on:
   push:
     branches:
