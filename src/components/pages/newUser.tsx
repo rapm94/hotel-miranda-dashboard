@@ -26,7 +26,7 @@ export const StyledBigPanelHeader = styled.div`
   color: ${(props) => props.theme.colors.letter_grey_dark};
 `;
 
-export default const NewUser: React.FC = (): React.ReactElement => {
+export const NewUser: React.FC = (): React.ReactElement => {
   const dispatch = useDispatch();
 
 const initialState = {
@@ -37,6 +37,7 @@ const initialState = {
   mail: "",
   phone: "",
   status: 'inactive',
+  jobDescription: "",
 }
 
   const [newUser, setNewUser] = useState(initialState);
