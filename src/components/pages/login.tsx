@@ -5,7 +5,8 @@ import styled from 'styled-components'
 import { FaHotel } from 'react-icons/fa'
 import axios, { AxiosRequestHeaders } from 'axios'
 import { containerUrl } from '../../env'
-
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const LoginContainer = styled.div`
   display: flex;
@@ -62,14 +63,12 @@ const StyledLogoHotel = styled(FaHotel)`
 `
 
 export default function Login() {
-
   let navigate = useNavigate()
 
   const { login, isAuthenticated } = useContext(AuthContext)
 
   const [userId, setUserId] = useState('')
   const [password, setPassword] = useState('')
-
 
   const user = {
     email: userId,
@@ -97,26 +96,33 @@ export default function Login() {
   const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault()
 
-    const headers:AxiosRequestHeaders = {
+    const headers: AxiosRequestHeaders = {
       'Content-Type': 'application/json',
     }
-    try{
-      await axios.post(`${containerUrl}:8000/auth/login`, user, headers).then((res) => {
-        console.log(res)
-        const user = {
-          email: res.data.user.email,
-          password: res.data.user.password,
-          token: res.data.token,
-        }
-        login(user)
-        navigate('/')
-      })
-    }catch (error) {
+
+    try {
+      await axios
+        .post(`${containerUrl}:8000/auth/login`, user, headers)
+        .then((res) => {
+          console.log(res)
+          const user = {
+            email: res.data.user.email,
+            password: res.data.user.password,
+            token: res.data.token,
+          }     
+          login(user)
+          navigate('/')
+        })
+    } catch (error) {
+      toast.error('Wrong credentials!')
       console.log(error)
     }
-
-
   }
+
+//use toastify to with the handle submit function
+
+
+
   return (
     <LoginContainer>
       <StyledLogoHotel />
@@ -136,6 +142,17 @@ export default function Login() {
         />
         <LoginSubmit type="submit" value="Login" />
       </LoginForm>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </LoginContainer>
   )
 }

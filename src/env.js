@@ -1,1 +1,1 @@
-export const containerUrl = 'http://20.103.187.124';
+export const containerUrl = '//20.103.187.124';
