@@ -27,24 +27,6 @@ export const AuthReducer = (state:any, action:any) => {
           isAuthenticated: false,
           user: null
         };
-      case "CHANGE_PASSWORD":
-        saveAuthState({
-          isAuthenticated: true,
-          user: action.user
-        });
-          return {
-              ...state,
-              user: action.payload
-          };
-      case "CHANGE_USERNAME":
-        saveAuthState({
-          isAuthenticated: true,
-          user: action.user
-        });
-          return {
-              ...state,
-              user: action.payload
-          };
       default:
         return state;
     }

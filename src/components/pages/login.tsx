@@ -3,6 +3,9 @@ import { AuthContext } from '../../contexts/AuthContext'
 import { useContext, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { FaHotel } from 'react-icons/fa'
+import axios, { AxiosRequestHeaders } from 'axios'
+import { containerUrl } from '../../env'
+
 
 const LoginContainer = styled.div`
   display: flex;
@@ -59,6 +62,7 @@ const StyledLogoHotel = styled(FaHotel)`
 `
 
 export default function Login() {
+
   let navigate = useNavigate()
 
   const { login, isAuthenticated } = useContext(AuthContext)
@@ -66,38 +70,45 @@ export default function Login() {
   const [userId, setUserId] = useState('')
   const [password, setPassword] = useState('')
 
-  const userName = 'raul'
-  const userPassword = '123'
 
   const user = {
-    userId: userName,
-    password: userPassword,
+    email: userId,
+    password: password,
   }
- 
+
   useEffect(() => {
     if (isAuthenticated) {
       console.log(isAuthenticated)
       navigate('/')
     }
-  }, [isAuthenticated, navigate]) 
+  }, [isAuthenticated, navigate])
 
-  const handleChangeUser = (e:any) => {
+  const handleChangeUser = (e: any) => {
     e.preventDefault()
     const userId = e.target.value
     setUserId(userId)
   }
-  const handleChangePassword = (e:any) => {
+  const handleChangePassword = (e: any) => {
     e.preventDefault()
     const passwordId = e.target.value
     setPassword(passwordId)
   }
 
-  const handleSubmit = (e:React.SyntheticEvent) => {
+  const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault()
-    if (userId === userName && password === userPassword) {
-      login(user)
-      navigate('/')
-    } 
+
+    const headers:AxiosRequestHeaders = {
+      'Content-Type': 'application/json',
+    }
+    try{
+      await axios.post(`${containerUrl}:8000/auth/login`, user, headers).then((res) => {
+        login(res.data)
+      })
+    }catch (error) {
+      console.log(error)
+    }
+
+
   }
   return (
     <LoginContainer>

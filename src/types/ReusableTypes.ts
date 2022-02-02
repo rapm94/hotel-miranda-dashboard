@@ -1,19 +1,14 @@
 import React from 'react';
 
 
-interface IProps {
+export interface IProps {
     children: React.ReactNode | React.ReactNode[];
 }
 
-interface IUser {
+export interface IUser {
     userName: string;
     password: string;
     email: string;
+    token: string;
 }
 
-
-
-export {
-    IProps,
-    IUser
-};

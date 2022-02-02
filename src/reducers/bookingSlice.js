@@ -5,7 +5,7 @@ import { fetchBookings } from '../helpers/fetchData'
 
 const bookingState = () => {
   const bookings = []
-  const data:any = fetchBookings()
+  const data = fetchBookings()
   bookings.push(data)
 }
 

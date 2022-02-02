@@ -1,4 +1,25 @@
 import { createSlice } from '@reduxjs/toolkit'
+import axios from 'axios'
+import { containerUrl } from '../env'
+
+let roomState = async () => {
+  try {
+    const rooms = []
+    const data = await axios.get(`${containerUrl}/api/rooms`)
+    rooms.push(data.data)
+    if (data === undefined) {
+      return rooms
+    } else {
+      return (data = {
+        rooms: [],
+        loading: false,
+        error: null,
+      })
+    }
+  } catch (err) {
+    console.log(err)
+  }
+}
 
 const RoomsSlice = createSlice({
   name: 'rooms',
@@ -32,36 +53,36 @@ const RoomsSlice = createSlice({
       state.rooms = action.payload
     },
     orderByRooms: (state, action) => {
-      if (action.payload === "higher") {
+      if (action.payload === 'higher') {
         state.rooms = state.rooms.sort((a, b) => {
           if (a.price > b.price) {
-            return -1;
+            return -1
           }
           if (a.price < b.price) {
-            return 1;
+            return 1
           }
-          return 0;
-        });
-      } else if (action.payload === "lower") {
+          return 0
+        })
+      } else if (action.payload === 'lower') {
         state.rooms = state.rooms.sort((a, b) => {
           if (a.price > b.price) {
-            return 1;
+            return 1
           }
           if (a.price < b.price) {
-            return -1;
+            return -1
           }
-          return 0;
-        });
-      } else if (action.payload === "roomNumber") {
+          return 0
+        })
+      } else if (action.payload === 'roomNumber') {
         state.rooms = state.rooms.sort((a, b) => {
           if (a.price > b.price) {
-            return 1;
+            return 1
           }
           if (a.price < b.price) {
-            return -1;
+            return -1
           }
-          return 0;
-        });
+          return 0
+        })
       }
     },
   },

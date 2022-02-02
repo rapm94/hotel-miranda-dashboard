@@ -13,6 +13,7 @@ const initialAuthState: IAuthState= {
     userName: '',
     password: '',
     email: '',
+    token: '',
   },
 }
 
