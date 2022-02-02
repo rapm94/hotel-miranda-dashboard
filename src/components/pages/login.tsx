@@ -119,10 +119,6 @@ export default function Login() {
     }
   }
 
-//use toastify to with the handle submit function
-
-
-
   return (
     <LoginContainer>
       <StyledLogoHotel />
