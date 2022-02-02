@@ -10,7 +10,6 @@ interface IAuthState {
 const initialAuthState: IAuthState= {
   isAuthenticated: false,
   user: {
-    userName: '',
     password: '',
     email: '',
     token: '',

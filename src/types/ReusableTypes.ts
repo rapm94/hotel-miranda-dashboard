@@ -6,7 +6,6 @@ export interface IProps {
 }
 
 export interface IUser {
-    userName: string;
     password: string;
     email: string;
     token: string;

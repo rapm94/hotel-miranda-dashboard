@@ -102,7 +102,14 @@ export default function Login() {
     }
     try{
       await axios.post(`${containerUrl}:8000/auth/login`, user, headers).then((res) => {
-        login(res.data)
+        console.log(res)
+        const user = {
+          email: res.data.user.email,
+          password: res.data.user.password,
+          token: res.data.token,
+        }
+        login(user)
+        navigate('/')
       })
     }catch (error) {
       console.log(error)
