@@ -5,20 +5,25 @@ It is a web application that allows the hotel to manage its rooms,
 bookings, and customers.
 Was created by [@ramp94]
 
-It uses the [React.js](https://reactjs.org/) library to create the front end.
-The [Redux](https://redux.js.org/) library is used to manage the state of the application.
-[Styled-components](https://www.styled-components.com/) is used to style the application.
+### The technologies used for its development were:
+##### - Javascript
+##### - React + Redux + Router
+##### - Styled Components (CSS + SCSS)
+##### - Jest & Cypress for Testing
+##### - Git
+##### - Visual Libraries: fullcalendar, D3...
 
 ## Installation
 
-    ```bash	
-    npm install
-    ```
+    - npm install
+    - npm start
+
 
 ## License
 
-    ```bash
     MIT
-    ```
 
 
+
+![flujo de trabajo de ejemplo](https://github.com/rapm94/hotel-miranda-dashboard/actions/workflows/azure-static-web-apps-mango-hill-00c64fb03.yml/badge.svg?event=push)
+ 
